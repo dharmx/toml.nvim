@@ -1,4 +1,4 @@
-TOML-CONFIG.NVIM
+TOML.NVIM
 ================
 
 A proof of concept plugin. Configure Neovim with TOML/JSON.
@@ -22,7 +22,7 @@ CONTACT
 =======
 
 Web:
-https://github.com/dharmx/toml-config.nvim
+https://github.com/dharmx/toml.nvim
 
 Email:
 dharmx.dev@gmail.com
