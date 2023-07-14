@@ -1,3 +1,4 @@
+-- Stolen from https://github.com/jonstoler/lua-toml
 local TOML = {
   -- denotes the current supported TOML version
   version = 0.40,
@@ -11,7 +12,7 @@ local TOML = {
 }
 
 -- converts TOML data into a lua table
-TOML.parse = function(toml, options)
+TOML.decode = function(toml, options)
   options = options or {}
   local strict = (options.strict ~= nil and options.strict or TOML.strict)
 

@@ -1,6 +1,13 @@
 local M = {}
 
 M._defaults = {
+  path = vim.fn.stdpath("config") .. "/config.toml",
+  nvim = {
+    global = {
+      theme = "quiet",
+      providers = { "node", "perl", "python3", "ruby" },
+    },
+  },
   log = {
     plugin = "track",
     level = "warn",
@@ -14,7 +21,20 @@ function M.merge(options)
   M._current = vim.tbl_deep_extend("keep", options, M._current)
 end
 
-function M.extend(options) return vim.tbl_deep_extend("keep", options, M._current) end
+function M.merge_nvim(options)
+  options = vim.F.if_nil(options, {})
+  M._current.nvim = vim.tbl_deep_extend("keep", options, M._current.nvim)
+end
+
+function M.extend(options)
+  options = vim.F.if_nil(options, {})
+  return vim.tbl_deep_extend("keep", options, M._current)
+end
+
+function M.extend_nvim(options)
+  options = vim.F.if_nil(options, {})
+  vim.tbl_deep_extend("keep", options, M._current.nvim)
+end
 
 function M.get() return M._current end
 
