@@ -1,0 +1,30 @@
+TOML-CONFIG.NVIM
+================
+
+A proof of concept plugin. Configure Neovim with TOML/JSON.
+
+
+HOW CAN I HELP?
+===============
+
+This is a WIP plugin which means that there are no features yet.
+But, if you have some ideas on what to add then make an issue:
+* I need help writing docs.
+* I need help designing the API.
+* Any more feature ideas?
+
+LICENSE
+=======
+
+GNU GPL-3.0.
+
+CONTACT
+=======
+
+Web:
+https://github.com/dharmx/toml-config.nvim
+
+Email:
+dharmx.dev@gmail.com
+
+Please email me about problems, experiences, patches, fixes, etc.
