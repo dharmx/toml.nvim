@@ -3,13 +3,13 @@ local M = {}
 M._defaults = {
   path = vim.fn.stdpath("config") .. "/config.toml",
   nvim = {
-    global = {
-      theme = "quiet",
-      providers = { "node", "perl", "python3", "ruby" },
-    },
+    global = { theme = "quiet", providers = { "node", "perl", "python3", "ruby" } },
+    keymap = {},
+    variables = {},
+    options = {},
   },
   log = {
-    plugin = "track",
+    plugin = "toml",
     level = "warn",
   },
 }
