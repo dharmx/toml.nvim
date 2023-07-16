@@ -51,6 +51,7 @@ function M.apply(config)
   if editor.scrolloff then vim.o.scrolloff = editor.scrolloff end
   if editor.sidescrolloff then vim.o.sidescrolloff = editor.sidescrolloff end
   if editor.shell then vim.o.shell = vim.fn.expand(editor.shell) end
+  vim.opt.fillchars = config.nvim.editor.fillchars
   M.apply_mouse(config)
   M.apply_cursor(config)
 end
