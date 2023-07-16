@@ -1,4 +1,5 @@
 local M = {}
+local Util = require("toml.util")
 
 function M.setup(options)
   vim.env.NVIM_CONFIG = vim.fn.stdpath("config")
@@ -12,8 +13,9 @@ function M.setup(options)
   Config.merge_nvim(require("toml.core").parse(Config.get()))
 
   local features = Config.get().engine.features
-  for feature, enabled in pairs(features) do
-    if enabled then require("toml.nvim." .. feature).apply(Config.get()) end
+  local prioritized_features = Util.sorted_keys(features)
+  for _, feature in ipairs(prioritized_features) do
+    if features[feature] then require("toml.nvim." .. feature).apply(Config.get()) end
   end
 end
 
