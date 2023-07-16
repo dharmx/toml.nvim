@@ -2,11 +2,23 @@ local M = {}
 
 M._defaults = {
   path = vim.fn.stdpath("config") .. "/config.toml",
+  directory = vim.fn.stdpath("config") .. "/toml",
   nvim = {
-    global = { theme = "quiet", providers = { "node", "perl", "python3", "ruby" } },
-    keymap = {},
-    variables = {},
-    options = {},
+    global = {
+      theme = "quiet",
+      providers = { "node", "perl", "python3", "ruby" },
+    },
+  },
+  engine = {
+    strict = false,
+    features = {
+      global = true,
+      keymap = true,
+      variables = true,
+      options = true,
+      editor = true,
+      sign = true,
+    },
   },
   log = {
     plugin = "toml",
