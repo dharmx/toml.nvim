@@ -1,13 +1,11 @@
 local M = {}
 
 local toml = require("toml.engine")
-local Path = require("plenary.path")
-local Config = require("toml.config").get()
+local util = require("toml.util")
 
-function M.parse()
-  local tail = vim.fn.fnamemodify(Config.path, ":e")
-  local path = Path:new(Config.path)
-  local data = path:read()
+function M.parse(config)
+  local tail = vim.fn.fnamemodify(config.path, ":e")
+  local data = util.read(config.path)
   if tail == "toml" then
     return toml.decode(data)
   elseif tail == "json" then

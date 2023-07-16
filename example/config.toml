@@ -1,46 +1,113 @@
+# TODO: Add wrap options.
+
 [global]
 theme = 'radium' # currently only offline themes are allowed
 providers = ['node', 'perl', 'python3', 'ruby'] # blacklists these providers
+leader = ';'
 
-# Sign {{{
-[sign]
-signcolumn = 'yes'
+# Plugin {{{
+[plugin.engine]
+use = 'lazy' # PR for adding support for more plugin managers
+branch = 'stable'
 
-[sign.diagnostic.error]
-name = 'DiagnosticSignError'
-text = ''
-texthl = 'DiagnosticsSignErrorText'
-linehl = 'DiagnosticsSignErrorLine'
-numhl = 'DiagnosticsSignErrorNum'
+[plugin.engine.lazy]
+lockfile = '$NVIM_CONFIG/lock.json'
+root = '$NVIM_DATA/plugins'
 
-[sign.diagnostic.hint]
-name = 'DiagnosticSignHint'
-text = ' '
-texthl = 'DiagnosticsSignHintText'
-linehl = 'DiagnosticsSignHintLine'
-numhl = 'DiagnosticsSignHintNum'
+[plugin.engine.lazy.change_detection]
+enabled = true
+notify = true
 
-[sign.diagnostic.info]
-name = 'DiagnosticSignInfo'
-text = ''
-texthl = 'DiagnosticsSignInfoText'
-linehl = 'DiagnosticsSignInfoLine'
-numhl = 'DiagnosticsSignInfoNum'
+[plugin.engine.lazy.performance]
+reset_packpath = true
 
-[sign.diagnostic.warn]
-name = 'DiagnosticSignWarn'
-text = ''
-texthl = 'DiagnosticsSignWarnText'
-linehl = 'DiagnosticsSignWarnLine'
-numhl = 'DiagnosticsSignWarnNum'
+[plugin.engine.lazy.performance.rtp]
+disabled_plugins = [
+  'netrwPlugin',
+  'netrwSettings',
+  'netrwFileHandlers',
+  'netrw',
+  'matchparen',
+  '2html_plugin',
+  'getscript',
+  'getscriptPlugin',
+  'gzip',
+  'logipat',
+  'matchit',
+  'tar',
+  'tarPlugin',
+  'rrhelper',
+  'vimball',
+  'vimballPlugin',
+  'zip',
+  'zipPlugin',
+  'tutor',
+  'rplugin',
+  'bugreport',
+  'tutor_mode_plugin',
+  'fzf',
+  'sleuth',
+]
 
-[sign.lightbulb]
-name = 'LightBulbSign'
-text = ''
-texthl = 'LspDiagnosticsSignHint'
-numhl = 'LspDiagnosticsSignHint'
+[plugin.engine.lazy.performance.cache]
+ttl = 432000
+enabled = true
+path = '$NVIM_CACHE/lazy/cache'
+disable_events = [ 'VimEnter', 'BufReadPre', 'UIEnter' ]
+
+[plugin.engine.lazy.diff]
+cmd = 'diffview.nvim'
+
+[plugin.engine.lazy.ui]
+throttle = 20
+border = 'solid'
+
+[plugin.engine.lazy.ui.size]
+height = 0.8
+width = 0.8
+
+[plugin.engine.lazy.ui.icons]
+plugin = ' '
+runtime = ' '
+lazy = '鈴 '
+config = ''
+loaded = '●'
+ft = ' '
+task = '✔ '
+cmd = ' '
+init = ' '
+keys = ' '
+import = ' '
+event = ''
+not_loaded = '○'
+start = ''
+source = ' '
+list = [ '●', '➜', '★', '‒' ]
+
+[plugin.engine.lazy.readme]
+root = '$NVIM_STATE/lazy/readme'
+skip_if_doc_exists = true
+files = [ 'README.md', 'lua/**/README.md', '.github/README.md' ]
+
+[plugin.engine.lazy.defaults]
+lazy = true
+
+[plugin.engine.lazy.dev]
+path = '$HOME/Dotfiles/neovim'
+
+[plugin.engine.lazy.install]
+missing = true
+colorscheme = [ 'radium' ]
+
+[plugin.engine.lazy.checker]
+concurrency = 50
+enabled = false
+notify = true
+frequency = 3600
+concurrency = 50
 # }}}
 
+# Editor {{{
 [editor]
 line_number = 'absolute' # relative | absolute | none
 scrolloff = 8
@@ -69,6 +136,7 @@ cmdline = false # command-line mode
 help = false # all previous modes when editing a help file
 previous = false # all previous modes
 prompt = false # for hit-enter and more-prompt prompt
+# }}}
 
 # Keymap {{{
 [keymap]
@@ -179,8 +247,8 @@ neovide_padding_bottom = 10
 
 # Options {{{
 [options]
-backupdir = '${NVIM_STATE}/backup'
-spellfile = '${NVIM_CONFIG}/spell/words.add'
+backupdir = '$NVIM_STATE/backup'
+spellfile = '$NVIM_CONFIG/spell/words.add'
 guifont = 'Iosevka Nerd Font,Cooper Hewitt:h13'
 linespace = 8
 swapfile = false
@@ -236,4 +304,43 @@ list = true
 menuitems = 30
 magic = true
 icon = true
+# }}}
+
+# Sign {{{
+[sign]
+signcolumn = 'yes'
+
+[sign.diagnostic.error]
+name = 'DiagnosticSignError'
+text = ''
+texthl = 'DiagnosticsSignErrorText'
+linehl = 'DiagnosticsSignErrorLine'
+numhl = 'DiagnosticsSignErrorNum'
+
+[sign.diagnostic.hint]
+name = 'DiagnosticSignHint'
+text = ' '
+texthl = 'DiagnosticsSignHintText'
+linehl = 'DiagnosticsSignHintLine'
+numhl = 'DiagnosticsSignHintNum'
+
+[sign.diagnostic.info]
+name = 'DiagnosticSignInfo'
+text = ''
+texthl = 'DiagnosticsSignInfoText'
+linehl = 'DiagnosticsSignInfoLine'
+numhl = 'DiagnosticsSignInfoNum'
+
+[sign.diagnostic.warn]
+name = 'DiagnosticSignWarn'
+text = ''
+texthl = 'DiagnosticsSignWarnText'
+linehl = 'DiagnosticsSignWarnLine'
+numhl = 'DiagnosticsSignWarnNum'
+
+[sign.lightbulb]
+name = 'LightBulbSign'
+text = ''
+texthl = 'LspDiagnosticsSignHint'
+numhl = 'LspDiagnosticsSignHint'
 # }}}

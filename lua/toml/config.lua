@@ -12,6 +12,7 @@ M._defaults = {
   engine = {
     strict = false,
     features = {
+      plugin = true,
       global = true,
       keymap = true,
       variables = true,

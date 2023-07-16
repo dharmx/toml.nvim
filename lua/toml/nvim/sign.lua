@@ -1,5 +1,4 @@
 local M = {}
-local Path = require("plenary.path")
 
 function M.apply_diagnostic(config)
   local diagnostic = vim.deepcopy(config.nvim.sign.diagnostic)

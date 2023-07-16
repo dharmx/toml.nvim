@@ -3,6 +3,21 @@ TOML.NVIM
 
 A proof of concept plugin. Configure Neovim with TOML/JSON.
 
+INSTALL
+=======
+
+Copy the example config.toml file and place it in ~/.config/nvim.
+Paste the following in ~/.config/nvim/init.lua
+
+local tomlpath = vim.fn.stdpath("data") .. "/site/pack/toml/start/toml.nvim"
+if not vim.loop.fs_realpath(tomlpath) then
+  vim.fn.system("git clone --depth 1 https://github.com/dharmx/toml.nvim.git " .. tomlpath)
+  vim.cmd.packadd("toml.nvim")
+end
+require("toml").setup()
+
+Open neovim. Restart neovim after lazy installs.
+
 HOW CAN I HELP?
 ===============
 
