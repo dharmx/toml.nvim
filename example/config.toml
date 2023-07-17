@@ -1,5 +1,3 @@
-# TODO: Add wrap options.
-
 [global]
 theme = "radium" # currently only offline themes are allowed
 providers = ["node", "perl", "python3", "ruby"] # blacklists these providers
@@ -132,6 +130,93 @@ line_number = "absolute" # relative | absolute | none
 scrolloff = 8
 sidescrolloff = 8
 shell = "$SHELL"
+emoji = true
+ruler = true
+list = true
+menuitems = 30
+magic = true
+icon = true
+title = true
+hidden = true
+cmdheight = 1
+numberwidth = 1
+
+[editor.spacing]
+backspace = ["indent", "eol", "start"]
+linespace = 8
+textwidth = 120
+autowrite = true
+autoindent = true
+expandtab = true
+shiftwidth = 2
+smartindent = true
+ignorecase = false
+smartcase = true
+tabstop = 4
+
+[editor.split]
+splitbelow = true
+splitright = true
+splitkeep = "cursor"
+
+[editor.tui]
+termguicolors = true
+pumheight = 25
+pumwidth = 35
+pumblend = 0
+winblend = 0
+
+[editor.gui]
+guifont = "Iosevka Nerd Font,Dosis:h14"
+guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+guifontwide = ""
+
+[editor.fold]
+foldcolumn = "auto"
+foldmethod = "marker"
+foldclose = ""
+foldenable = true
+foldexpr = "0"
+foldignore = "#"
+foldlevel = 0
+foldlevelstart = -1
+foldmarker = "{{{,}}}"
+foldminlines = 1
+foldnestmax = 20
+foldopen = "block,hor,mark,percent,quickfix,search,tag,undo"
+foldtext = "foldtext()"
+
+[editor.wild]
+wildmode = ["longest", "list", "full"]
+wildignore = ["*/cache/*", "*/tmp/*"]
+wildchar = 9
+wildcharm = 9
+wildignorecase = true
+wildmenu = true
+wildoptions = "pum,tagfile"
+
+[editor.wrap]
+wrap = false
+whichwrap = "b,s,<>[]hl"
+wrapmargin = 0
+wrapscan = true
+
+[editor.backup]
+backupdir = "$NVIM_STATE/backup"
+backup = true
+
+[editor.undo]
+undolevels = 10000
+undoreload = 10000
+undofile = true
+undodir = "$NVIM_STATE/undo"
+
+[editor.spell]
+spellfile = "$NVIM_CONFIG/spell/words.add"
+spell = false
+spelllang = ["en_us", "en_gb", "cjk"]
+spellsuggest = ["best", 9]
+spelloptions = ["camel", "noplainbuffer"]
 
 [editor.fillchars]
 eob = " "
@@ -283,64 +368,20 @@ neovide_padding_bottom = 10
 
 # Options {{{
 [options]
-backupdir = "$NVIM_STATE/backup"
-spellfile = "$NVIM_CONFIG/spell/words.add"
-guifont = "Iosevka Nerd Font,Cooper Hewitt:h13"
-linespace = 8
-swapfile = false
-backup = true
-spell = false
-wildmode = ["longest", "list", "full"]
-spelllang = ["en_us", "en_gb", "cjk"]
-spellsuggest = ["best", 9]
-spelloptions = ["camel", "noplainbuffer"]
 exrc = false
-termguicolors = true
-textwidth = 120
 colorcolumn = "120"
 laststatus = 3
-backspace = ["indent", "eol", "start"]
 completeopt = ["menuone", "noselect"]
-title = true
-hidden = true
-splitbelow = true
-splitright = true
 clipboard = ""
-cmdheight = 1
-autowrite = true
-autoindent = true
-expandtab = true
-shiftwidth = 2
-smartindent = true
-wildignore = ["*/cache/*", "*/tmp/*"]
-foldcolumn = "auto"
-foldmethod = "marker"
-ignorecase = false
-smartcase = true
-undolevels = 10000
-numberwidth = 1
-tabstop = 4
+swapfile = false
 timeoutlen = 250
-undofile = true
 updatetime = 500
-wrap = false
 showmode = true
 showcmd = true
 showtabline = 1
 hlsearch = true
 conceallevel = 2
-pumheight = 25
-pumwidth = 35
-pumblend = 0
-winblend = 0
 history = 10000
-emoji = true
-ruler = true
-list = true
-menuitems = 30
-magic = true
-icon = true
-whichwrap = "b,s,<>[]hl"
 shortmess = "filnxtToOFsI"
 diffopt = ["internal", "filler", "closeoff", "algorithm:patience"]
 formatoptions = "tcqj"

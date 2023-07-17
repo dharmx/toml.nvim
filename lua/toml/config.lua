@@ -2,13 +2,8 @@ local M = {}
 
 M._defaults = {
   path = vim.fn.stdpath("config") .. "/config.toml",
-  directory = vim.fn.stdpath("config"),
-  nvim = {
-    global = {
-      theme = "quiet",
-      providers = { "node", "perl", "python3", "ruby" },
-    },
-  },
+  directory = vim.fn.stdpath("config") .. "/toml",
+  nvim = {},
   engine = {
     strict = false,
     features = {
