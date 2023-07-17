@@ -9,6 +9,7 @@ function M.parse(config)
   if tail == "toml" then
     return toml.decode(data)
   elseif tail == "json" then
+    ---@diagnostic disable-next-line: param-type-mismatch
     return vim.json.decode(data)
   end
   error("Only TOML and JSON filetypes are allowed.")

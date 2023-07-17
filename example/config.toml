@@ -105,6 +105,25 @@ enabled = false
 notify = true
 frequency = 3600
 concurrency = 50
+
+# TODO: Kill me.
+# [plugin.engine.lazy.spec]
+## inside config.directory
+# import = "plugin.toml"
+## all plugin.[config|build|init|...] functions will be pulled from here
+## inside factory lua:
+## M.lazy = {
+##   ...
+##   ["dharmx/track.nvim"] = {
+##     config = function() require("dharmx.configs.track") end,
+##     init = function() vim.g.loaded_track = 2 end,
+##   },
+##   ["dharmx/colo.nvim"] = {
+##     config = function() require("dharmx.configs.colo") end,
+##   },
+##   ...
+## }
+# factory = "factory.lua"
 # }}}
 
 # Editor {{{
