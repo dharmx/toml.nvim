@@ -1,11 +1,11 @@
 local M = {}
 
-local toml = require("toml.engine")
-local util = require("toml.util")
+local Toml = require("toml.engine")
+local Util = require("toml.util")
 
 function M.parse(config)
   local tail = vim.fn.fnamemodify(config.path, ":e")
-  local data = util.read(config.path)
+  local data = Util.read(config.path)
   assert(type(data) == "string")
   data = data:gsub("$NVIM_CONFIG", vim.fn.stdpath("config"))
   data = data:gsub("$NVIM_STATE", vim.fn.stdpath("state"))
@@ -13,7 +13,7 @@ function M.parse(config)
   data = data:gsub("$NVIM_CACHE", vim.fn.stdpath("cache"))
 
   if tail == "toml" then
-    return toml.decode(data)
+    return Toml.decode(data)
   elseif tail == "json" then
     ---@diagnostic disable-next-line: param-type-mismatch
     return vim.json.decode(data)

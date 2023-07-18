@@ -8,6 +8,11 @@ function M.setup(options)
   Config.merge_nvim(require("toml.core").parse(Config.get()))
   -- anything inside NVIM_CONFIG/toml can be now required
   package.path = string.format("%s;%s/?.lua", package.path, Config.get().directory)
+  Config.merge({
+    factory = {
+      contents = require("factory")
+    }
+  })
 
   local feats = Config.get().engine.features
   -- features needs to be loaded by order sometimes

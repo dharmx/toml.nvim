@@ -5,7 +5,7 @@ event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]
 
 [[spec]]
 plugin = "monaqa/dial.nvim"
-config = "factory"
+config = "dharmx.configs.code.dial"
 keys = "factory"
 
 [[spec]]
@@ -18,7 +18,7 @@ plugin = "johmsalas/text-case.nvim"
 
 [[spec]]
 plugin = "tversteeg/registers.nvim"
-config = "factory"
+config = "dharmx.configs.code.registers"
 cmd = "Registers"
 keys = "factory"
 
@@ -47,7 +47,8 @@ build = "factory"
 
 [[spec]]
 plugin = "kevinhwang91/rnvimr"
-init = "factory"
+init = "dharmx.configs.code.ranger"
+lazy = false
 
 [[spec]]
 plugin = "sindrets/diffview.nvim"
@@ -57,13 +58,13 @@ event = "CmdlineEnter"
 [[spec]]
 plugin = "akinsho/toggleterm.nvim"
 cmd = "ToggleTerm"
-config = "factory"
+config = "dharmx.configs.code.toggleterm"
 
 [[spec]]
 plugin = "kevinhwang91/nvim-hlslens"
 config = true
 event = "CmdlineEnter"
-keys = "factory"
+keys = [ "n", "N" ]
 
 [[spec]]
 plugin = "kovetskiy/sxhkd-vim"
@@ -77,12 +78,12 @@ opts = "factory"
 [[spec]]
 plugin = "lewis6991/gitsigns.nvim"
 event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]
-config = "factory"
+config = "dharmx.configs.code.gitsigns"
 
 [[spec]]
 plugin = "numToStr/Comment.nvim"
-config = "factory"
 keys = "factory"
+config = "dharmx.configs.code.comments"
 
 [[spec]]
 plugin = "phelipetls/vim-hugo"
@@ -109,7 +110,7 @@ init = "factory"
 plugin = "toppair/peek.nvim"
 ft = "markdown"
 opts = "factory"
-build = "factory"
+build = "deno task --quiet build:fast"
 
 [[spec]]
 plugin = "rafamadriz/friendly-snippets"
@@ -117,24 +118,24 @@ plugin = "rafamadriz/friendly-snippets"
 [[spec]]
 plugin = "L3MON4D3/LuaSnip"
 event = "InsertEnter"
-config = "factory"
+config = "dharmx.configs.completions.luasnip"
 
 [[spec]]
 plugin = "gelguy/wilder.nvim"
 event = "CmdlineEnter"
-config = "factory"
+config = "dharmx.configs.completions.wilder"
 
 [[spec]]
 plugin = "windwp/nvim-autopairs"
 event = "InsertEnter"
-config = "factory"
+config = "dharmx.configs.completions.autopairs"
 
 [[spec]]
 plugin = "hrsh7th/nvim-cmp"
 dependencies = [ "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-nvim-lsp-signature-help", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp" ]
 event = "InsertEnter"
-config = "factory"
 keys = "factory"
+config = "dharmx.configs.completions"
 
 [[spec]]
 plugin = "saadparwaiz1/cmp_luasnip"
@@ -162,7 +163,7 @@ plugin = "vijaymarupudi/nvim-fzf"
 
 [[spec]]
 plugin = "williamboman/mason.nvim"
-config = "factory"
+config = "dharmx.configs.lsp.mason"
 
 [[spec]]
 plugin = "folke/neoconf.nvim"
@@ -175,11 +176,11 @@ plugin = "b0o/schemastore.nvim"
 
 [[spec]]
 plugin = "kosayoda/nvim-lightbulb"
-config = "factory"
+config = "dharmx.configs.lsp.lightbulb"
 
 [[spec]]
 plugin = "SmiteshP/nvim-navic"
-config = "factory"
+config = "dharmx.configs.lsp.navic"
 
 [[spec]]
 plugin = "simrat39/rust-tools.nvim"
@@ -195,18 +196,18 @@ opts = "factory"
 [[spec]]
 plugin = "neovim/nvim-lspconfig"
 cmd = "LspStart"
-config = "factory"
+config = "dharmx.configs.lsp"
 
 [[spec]]
 plugin = "j-hui/fidget.nvim"
 tag = "legacy"
 event = "LspAttach"
-config = "factory"
+config = "dharmx.configs.lsp.fidget"
 
 [[spec]]
 plugin = "mhartington/formatter.nvim"
 event = "LspAttach"
-config = "factory"
+config = "dharmx.configs.lsp.formatter"
 
 [[spec]]
 plugin = "jayp0521/mason-null-ls.nvim"
@@ -216,7 +217,7 @@ opts = "factory"
 plugin = "jose-elias-alvarez/null-ls.nvim"
 dependencies = [ "WhoIsSethDaniel/mason-tool-installer.nvim", "jayp0521/mason-null-ls.nvim" ]
 event = "LspAttach"
-config = "factory"
+config = "dharmx.configs.lsp.null"
 
 [[spec]]
 plugin = "WhoIsSethDaniel/mason-tool-installer.nvim"
@@ -228,18 +229,18 @@ dependencies = [ "jayp0521/mason-nvim-dap.nvim" ]
 
 [[spec]]
 plugin = "jayp0521/mason-nvim-dap.nvim"
-config = "factory"
+config = "dharmx.configs.lsp.masondap"
 
 [[spec]]
 plugin = "rcarriga/nvim-dap-ui"
 event = "LspAttach"
-config = "factory"
+config = "dharmx.configs.lsp.dapui"
 
 [[spec]]
 plugin = "nvim-telescope/telescope.nvim"
 dependencies = [ "nvim-telescope/telescope-symbols.nvim" ]
 cmd = "Telescope"
-config = "factory"
+config = "dharmx.configs.telescope"
 
 [[spec]]
 plugin = "dharmx/track.nvim"
@@ -263,39 +264,39 @@ plugin = "nvim-telescope/telescope-dap.nvim"
 [[spec]]
 plugin = "nvim-treesitter/nvim-treesitter"
 event = "BufWinEnter"
-config = "factory"
-build = "factory"
+build = ":TSUpdate"
+config = "dharmx.configs.treesitter"
 
 [[spec]]
 plugin = "romgrk/nvim-treesitter-context"
-config = "factory"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
+config = "dharmx.configs.treesitter.context"
 
 [[spec]]
 plugin = "andymass/vim-matchup"
-config = "factory"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
+config = "dharmx.configs.treesitter.matchup"
 
 [[spec]]
 plugin = "mrjones2014/nvim-ts-rainbow"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
-config = "factory"
+config = "dharmx.configs.treesitter.rainbow"
 
 [[spec]]
 plugin = "RRethy/nvim-treesitter-textsubjects"
-config = "factory"
 keys = "factory"
+config = "dharmx.configs.treesitter.textsubjects"
 
 [[spec]]
 plugin = "nvim-treesitter/nvim-treesitter-textobjects"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
-config = "factory"
+config = "dharmx.configs.treesitter.textobjects"
 
 [[spec]]
 plugin = "theHamsta/nvim-dap-virtual-text"
 dependencies = [ "nvim-treesitter/nvim-treesitter" ]
 event = "LspAttach"
-config = "factory"
+config = "dharmx.configs.treesitter.dapvirtual"
 
 [[spec]]
 plugin = "nvim-tree/nvim-web-devicons"
@@ -303,17 +304,17 @@ plugin = "nvim-tree/nvim-web-devicons"
 [[spec]]
 plugin = "petertriho/nvim-scrollbar"
 event = [ "InsertEnter", "CursorMoved" ]
-config = "factory"
+config = "dharmx.configs.ui.scrollbar"
 
 [[spec]]
 plugin = "rcarriga/nvim-notify"
 event = [ "CursorMoved", "CursorHold", "InsertEnter", "CmdlineEnter" ]
-config = "factory"
+config = "dharmx.configs.ui.notify"
 
 [[spec]]
 plugin = "folke/todo-comments.nvim"
 event = [ "CursorMoved", "CursorHold", "InsertEnter", "CmdlineEnter" ]
-config = "factory"
+config = "dharmx.configs.ui.todo"
 
 [[spec]]
 plugin = "doums/monark.nvim"
@@ -323,9 +324,9 @@ opts = "factory"
 [[spec]]
 plugin = "lukas-reineke/indent-blankline.nvim"
 event = [ "CursorMoved", "CursorHold", "InsertEnter" ]
-config = "factory"
+config = "dharmx.configs.ui.indentline"
 
 [[spec]]
 plugin = "RRethy/vim-illuminate"
 event = [ "InsertEnter", "CursorMoved" ]
-config = "factory"
+config = "dharmx.configs.ui.illuminate"

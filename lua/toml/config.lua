@@ -3,6 +3,10 @@ local M = {}
 M._defaults = {
   path = vim.fn.stdpath("config") .. "/config.toml",
   directory = vim.fn.stdpath("config") .. "/toml",
+  factory = {
+    mark = "factory",
+    contents = nil,
+  },
   nvim = {},
   engine = {
     strict = false,
