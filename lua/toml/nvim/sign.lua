@@ -1,6 +1,6 @@
 local M = {}
 
-function M.apply_diagnostic(config)
+function M._apply_diagnostic(config)
   local diagnostic = vim.deepcopy(config.nvim.sign.diagnostic)
   diagnostic.lightbulb = config.nvim.sign.lightbulb
   for _, sign in pairs(diagnostic) do
@@ -20,7 +20,7 @@ end
 function M.apply(config)
   local sign = config.nvim.sign
   if sign.signcolumn then vim.o.signcolumn = sign.signcolumn end
-  M.apply_diagnostic(config)
+  M._apply_diagnostic(config)
 end
 
 return M

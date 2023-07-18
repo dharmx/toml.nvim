@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup_lazy(config)
+function M._setup_lazy(config)
   local lazy = config.nvim.plugin.engine.lazy
   lazy.dev.path = vim.fn.expand(lazy.dev.path)
   lazy.root = vim.fn.expand(lazy.root)
@@ -23,13 +23,13 @@ function M.setup_lazy(config)
   require("lazy").setup(lazy)
 end
 
-function M.setup_engine(config)
+function M._setup_engine(config)
   local engine = config.nvim.plugin.engine
-  if engine.use == "lazy" then M.setup_lazy(config) end
+  if engine.use == "lazy" then M._setup_lazy(config) end
 end
 
 function M.apply(config)
-  M.setup_engine(config)
+  M._setup_engine(config)
 end
 
 return M

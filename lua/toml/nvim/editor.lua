@@ -10,7 +10,7 @@ local mouse_mode = {
   prompt = "r",
 }
 
-function M.apply_mouse(config)
+function M._apply_mouse(config)
   local mouse = vim.deepcopy(config.nvim.editor.mouse)
   if mouse.enabled then
     mouse.enabled = nil
@@ -22,7 +22,7 @@ function M.apply_mouse(config)
   end
 end
 
-function M.apply_cursor(config)
+function M._apply_cursor(config)
   local cursor = vim.deepcopy(config.nvim.editor.cursor)
   local options = {}
   for option, enabled in pairs(cursor.options) do
@@ -34,6 +34,19 @@ function M.apply_cursor(config)
   if parsed_options ~= "" then vim.opt.cursorlineopt = parsed_options end
   for option, enabled in pairs(cursor) do vim.opt[option] = enabled end
 end
+
+local components = {
+  "spacing",
+  "split",
+  "tui",
+  "gui",
+  "fold",
+  "wild",
+  "wrap",
+  "backup",
+  "undo",
+  "spell"
+}
 
 function M.apply(config)
   local editor = vim.deepcopy(config.nvim.editor)
@@ -48,26 +61,13 @@ function M.apply(config)
     vim.o.number = false
   end
 
-  local components = {
-    "spacing",
-    "split",
-    "tui",
-    "gui",
-    "fold",
-    "wild",
-    "wrap",
-    "backup",
-    "undo",
-    "spell"
-  }
-
   for _, component in ipairs(components) do
     for key, value in pairs(editor[component]) do vim.opt[key] = value end
     editor[component] = nil
   end
 
-  M.apply_cursor(config)
-  M.apply_mouse(config)
+  M._apply_cursor(config)
+  M._apply_mouse(config)
   vim.opt.fillchars = editor.fillchars
 
   editor.mouse = nil

@@ -6,11 +6,15 @@ function M.setup(options)
   Config.merge(options)
   require("toml.engine").strict = Config.get().engine.strict
   Config.merge_nvim(require("toml.core").parse(Config.get()))
+  -- anything inside NVIM_CONFIG/toml can be now required
+  package.path = string.format("%s;%s/?.lua", package.path, Config.get().directory)
 
-  local features = Config.get().engine.features
-  local prioritized_features = Util.sorted_keys(features)
-  for _, feature in ipairs(prioritized_features) do
-    if features[feature] then require("toml.nvim." .. feature).apply(Config.get()) end
+  local feats = Config.get().engine.features
+  -- features needs to be loaded by order sometimes
+  -- like: lazy.nvim needs leader to be set before it is loaded
+  local ranked_feats = Util.rank_map_keys(feats)
+  for _, feat in ipairs(ranked_feats) do
+    if feats[feat] then require("toml.nvim." .. feat).apply(Config.get()) end
   end
 end
 

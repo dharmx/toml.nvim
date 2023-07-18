@@ -9,7 +9,7 @@ function M.read(filename)
   return data
 end
 
-function M.sorted_keys(map)
+function M.rank_map_keys(map)
   local keys = vim.tbl_keys(map)
   table.sort(keys, function(a, b)
     local type_a = type(map[a])

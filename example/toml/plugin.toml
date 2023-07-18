@@ -5,18 +5,12 @@ event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]
 
 [[spec]]
 plugin = "monaqa/dial.nvim"
-keys = "" # "factory" is a reserved value the function will be picked up from factory.lua
-config = "" # "factory" is a reserved value the function will be picked up from factory.lua
-enabled = "" # "factory" is a reserved value the function will be picked up from factory.lua
-cond = "" # "factory" is a reserved value the function will be picked up from factory.lua
-init = "" # "factory" is a reserved value the function will be picked up from factory.lua
-build = "" # "factory" is a reserved value the function will be picked up from factory.lua
-event = "" # "factory" is a reserved value the function will be picked up from factory.lua
-ft = "" # "factory" is a reserved value the function will be picked up from factory.lua
+config = "factory"
+keys = "factory"
 
 [[spec]]
 plugin = "max397574/better-escape.nvim"
-opts = ""
+opts = "factory"
 event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]
 
 [[spec]]
@@ -24,9 +18,9 @@ plugin = "johmsalas/text-case.nvim"
 
 [[spec]]
 plugin = "tversteeg/registers.nvim"
-config = ""
+config = "factory"
 cmd = "Registers"
-keys = ""
+keys = "factory"
 
 [[spec]]
 plugin = "NvChad/nvim-colorizer.lua"
@@ -47,13 +41,13 @@ event = "CmdlineEnter"
 
 [[spec]]
 plugin = "aurum77/live-server.nvim"
-opts = ""
-build = ""
 cmd = [ "LiveServer", "LiveServerStart", "LiveServerStop" ]
+opts = "factory"
+build = "factory"
 
 [[spec]]
 plugin = "kevinhwang91/rnvimr"
-init = ""
+init = "factory"
 
 [[spec]]
 plugin = "sindrets/diffview.nvim"
@@ -62,14 +56,14 @@ event = "CmdlineEnter"
 
 [[spec]]
 plugin = "akinsho/toggleterm.nvim"
-config = ""
 cmd = "ToggleTerm"
+config = "factory"
 
 [[spec]]
 plugin = "kevinhwang91/nvim-hlslens"
 config = true
 event = "CmdlineEnter"
-keys = ""
+keys = "factory"
 
 [[spec]]
 plugin = "kovetskiy/sxhkd-vim"
@@ -77,18 +71,18 @@ ft = "sxhkd"
 
 [[spec]]
 plugin = "TimUntersberger/neogit"
-opts = ""
 cmd = "Neogit"
+opts = "factory"
 
 [[spec]]
 plugin = "lewis6991/gitsigns.nvim"
-config = ""
 event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]
+config = "factory"
 
 [[spec]]
 plugin = "numToStr/Comment.nvim"
-config = ""
-keys = ""
+config = "factory"
+keys = "factory"
 
 [[spec]]
 plugin = "phelipetls/vim-hugo"
@@ -108,39 +102,39 @@ event = [ "CursorHold", "CursorMoved", "InsertEnter", "CmdlineEnter" ]
 
 [[spec]]
 plugin = "mbbill/undotree"
-init = ""
 cmd = "UndotreeToggle"
+init = "factory"
 
 [[spec]]
 plugin = "toppair/peek.nvim"
-opts = ""
-build = ""
 ft = "markdown"
+opts = "factory"
+build = "factory"
 
 [[spec]]
 plugin = "rafamadriz/friendly-snippets"
 
 [[spec]]
 plugin = "L3MON4D3/LuaSnip"
-config = ""
 event = "InsertEnter"
+config = "factory"
 
 [[spec]]
 plugin = "gelguy/wilder.nvim"
-config = ""
 event = "CmdlineEnter"
+config = "factory"
 
 [[spec]]
 plugin = "windwp/nvim-autopairs"
-config = ""
 event = "InsertEnter"
+config = "factory"
 
 [[spec]]
 plugin = "hrsh7th/nvim-cmp"
 dependencies = [ "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-nvim-lsp-signature-help", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp" ]
-config = ""
 event = "InsertEnter"
-keys = ""
+config = "factory"
+keys = "factory"
 
 [[spec]]
 plugin = "saadparwaiz1/cmp_luasnip"
@@ -168,7 +162,7 @@ plugin = "vijaymarupudi/nvim-fzf"
 
 [[spec]]
 plugin = "williamboman/mason.nvim"
-config = ""
+config = "factory"
 
 [[spec]]
 plugin = "folke/neoconf.nvim"
@@ -181,11 +175,11 @@ plugin = "b0o/schemastore.nvim"
 
 [[spec]]
 plugin = "kosayoda/nvim-lightbulb"
-config = ""
+config = "factory"
 
 [[spec]]
 plugin = "SmiteshP/nvim-navic"
-config = ""
+config = "factory"
 
 [[spec]]
 plugin = "simrat39/rust-tools.nvim"
@@ -196,37 +190,37 @@ plugin = "mfussenegger/nvim-jdtls"
 [[spec]]
 plugin = "williamboman/mason-lspconfig.nvim"
 dependencies = [ "williamboman/mason.nvim" ]
-opts = ""
+opts = "factory"
 
 [[spec]]
 plugin = "neovim/nvim-lspconfig"
-config = ""
 cmd = "LspStart"
+config = "factory"
 
 [[spec]]
 plugin = "j-hui/fidget.nvim"
-config = ""
 tag = "legacy"
 event = "LspAttach"
+config = "factory"
 
 [[spec]]
 plugin = "mhartington/formatter.nvim"
-config = ""
 event = "LspAttach"
+config = "factory"
 
 [[spec]]
 plugin = "jayp0521/mason-null-ls.nvim"
-opts = ""
+opts = "factory"
 
 [[spec]]
 plugin = "jose-elias-alvarez/null-ls.nvim"
 dependencies = [ "WhoIsSethDaniel/mason-tool-installer.nvim", "jayp0521/mason-null-ls.nvim" ]
-config = ""
 event = "LspAttach"
+config = "factory"
 
 [[spec]]
 plugin = "WhoIsSethDaniel/mason-tool-installer.nvim"
-opts = ""
+opts = "factory"
 
 [[spec]]
 plugin = "mfussenegger/nvim-dap"
@@ -234,18 +228,18 @@ dependencies = [ "jayp0521/mason-nvim-dap.nvim" ]
 
 [[spec]]
 plugin = "jayp0521/mason-nvim-dap.nvim"
-config = ""
+config = "factory"
 
 [[spec]]
 plugin = "rcarriga/nvim-dap-ui"
-config = ""
 event = "LspAttach"
+config = "factory"
 
 [[spec]]
 plugin = "nvim-telescope/telescope.nvim"
 dependencies = [ "nvim-telescope/telescope-symbols.nvim" ]
-config = ""
 cmd = "Telescope"
+config = "factory"
 
 [[spec]]
 plugin = "dharmx/track.nvim"
@@ -268,70 +262,70 @@ plugin = "nvim-telescope/telescope-dap.nvim"
 
 [[spec]]
 plugin = "nvim-treesitter/nvim-treesitter"
-config = ""
-build = ""
 event = "BufWinEnter"
+config = "factory"
+build = "factory"
 
 [[spec]]
 plugin = "romgrk/nvim-treesitter-context"
-config = ""
+config = "factory"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
 
 [[spec]]
 plugin = "andymass/vim-matchup"
-config = ""
+config = "factory"
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
 
 [[spec]]
 plugin = "mrjones2014/nvim-ts-rainbow"
-config = ""
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
+config = "factory"
 
 [[spec]]
 plugin = "RRethy/nvim-treesitter-textsubjects"
-config = ""
-keys = ""
+config = "factory"
+keys = "factory"
 
 [[spec]]
 plugin = "nvim-treesitter/nvim-treesitter-textobjects"
-config = ""
 event = [ "CursorHold", "CursorMoved", "InsertEnter" ]
+config = "factory"
 
 [[spec]]
 plugin = "theHamsta/nvim-dap-virtual-text"
 dependencies = [ "nvim-treesitter/nvim-treesitter" ]
-config = ""
 event = "LspAttach"
+config = "factory"
 
 [[spec]]
 plugin = "nvim-tree/nvim-web-devicons"
 
 [[spec]]
 plugin = "petertriho/nvim-scrollbar"
-config = ""
 event = [ "InsertEnter", "CursorMoved" ]
+config = "factory"
 
 [[spec]]
 plugin = "rcarriga/nvim-notify"
-config = ""
 event = [ "CursorMoved", "CursorHold", "InsertEnter", "CmdlineEnter" ]
+config = "factory"
 
 [[spec]]
 plugin = "folke/todo-comments.nvim"
-config = ""
 event = [ "CursorMoved", "CursorHold", "InsertEnter", "CmdlineEnter" ]
+config = "factory"
 
 [[spec]]
 plugin = "doums/monark.nvim"
-opts = ""
 event = "InsertEnter"
+opts = "factory"
 
 [[spec]]
 plugin = "lukas-reineke/indent-blankline.nvim"
-config = ""
 event = [ "CursorMoved", "CursorHold", "InsertEnter" ]
+config = "factory"
 
 [[spec]]
 plugin = "RRethy/vim-illuminate"
-config = ""
 event = [ "InsertEnter", "CursorMoved" ]
+config = "factory"
