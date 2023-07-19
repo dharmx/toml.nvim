@@ -21,7 +21,7 @@ local keys_with = {
 }
 
 
-function M._parse_lazy_plugins(config)
+function M._parse_lazy(config)
   local plugins = Toml.decode(Util.read(config.directory .. "/plugin.toml")).spec
   local factory = config.factory
   local parsed = {}
@@ -71,7 +71,7 @@ function M._setup_lazy(config)
     })
   end
   vim.opt.runtimepath:prepend(lazypath)
-  lazy.spec = M._parse_lazy_plugins(config)
+  lazy.spec = M._parse_lazy(config)
   require("lazy").setup(lazy)
 end
 

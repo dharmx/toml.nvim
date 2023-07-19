@@ -1,4 +1,5 @@
 local M = {}
+local Log = require("toml.config")._log
 
 local mouse_mode = {
   normal = "n",
@@ -18,7 +19,7 @@ function M._apply_mouse(config)
     for option, enabled in pairs(mouse) do
       if enabled then table.insert(options, mouse_mode[option]) end
     end
-    vim.o.mouse = table.concat(options)
+    vim.opt.mouse = table.concat(options)
   end
 end
 
