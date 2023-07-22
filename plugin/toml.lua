@@ -1,5 +1,5 @@
-if vim.version().minor < 8 then
-  vim.notify("toml.nvim requires at least nvim 0.8.0.")
+if vim.version().minor < 9 then
+  vim.notify("toml.nvim requires at least nvim 0.9.0.")
   return
 end
 

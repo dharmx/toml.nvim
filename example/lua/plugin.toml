@@ -1,4 +1,8 @@
 [[spec]]
+plugin = "dharmx/toml.nvim"
+dir = "/home/dharmx/.local/share/site/pack/toml/start/toml.nvim"
+
+[[spec]]
 plugin = "kylechui/nvim-surround"
 config = true
 event = [ "CmdlineEnter", "InsertEnter", "CursorHold", "CursorMoved" ]

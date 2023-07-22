@@ -7,8 +7,7 @@ function M.setup(options)
   Config._log = require("toml.log").new(Config.get().log) -- order matters
   Config.merge_nvim(require("toml.core").parse(Config.get()))
 
-  -- anything inside NVIM_CONFIG/toml can be now required
-  package.path = string.format("%s;%s/?.lua", package.path, Config.get().directory)
+  if Config.get().package then package.path = string.format("%s;%s/?.lua", package.path, Config.get().directory) end
   Config.merge({ factory = { contents = require("factory") } })
   Config._log.info("toml.setup(): Started applying features.")
   require("toml.nvim").apply(Config.get())

@@ -51,6 +51,15 @@ function M._parse_lazy(config)
   return parsed
 end
 
+function M._subscribe_lazy()
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "LazyUpdatePre",
+    callback = function()
+      vim.notify("TODO: Updating toml.nvim.")
+    end,
+  })
+end
+
 function M._setup_lazy(config)
   local lazy = config.nvim.plugin.engine.lazy
   lazy.dev.path = vim.fn.expand(lazy.dev.path)
@@ -72,6 +81,7 @@ function M._setup_lazy(config)
   end
   vim.opt.runtimepath:prepend(lazypath)
   lazy.spec = M._parse_lazy(config)
+  M._subscribe_lazy()
   require("lazy").setup(lazy)
 end
 
