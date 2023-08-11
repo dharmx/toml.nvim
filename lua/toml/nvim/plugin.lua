@@ -55,7 +55,10 @@ function M._subscribe_lazy()
   vim.api.nvim_create_autocmd("User", {
     pattern = "LazyUpdatePre",
     callback = function()
-      vim.notify("TODO: Updating toml.nvim.")
+      local toml_path = vim.fn.stdpath("data") .. "/site/pack/toml/start/toml.nvim"
+      assert(vim.loop.fs_realpath(toml_path), toml_path .. " needs to exist!")
+      vim.notify("Updating toml.nvim!")
+      vim.fn.jobstart({ "git", "--git-dir=" .. toml_path, "pull" })
     end,
   })
 end
